@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>欢迎百度</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+</head>
+<style>
+  body,
+  html {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f9f9f9;
+    margin: 0;
+    overflow: hidden;
+  }
+</style>
+
+<body>
+  <!-- <iframe id="myFrame" src="about:blank"  style="width: 100%; height: 100%;"></iframe> -->
+  <iframe id="myFrame" src="https://www.baidu.com"  style="width: 100%; height: 100%;"></iframe>
+  <script>
+    const iframe = document.getElementById("myFrame");
+   
+    const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+
+    iframeDoc.open();
+    iframeDoc.write(`
+    <!DOCTYPE html>
+    <html>
+      <body>
+        <h1>欢迎您</h1>
+        <script>  setTimeout(() => {
+      location.href = "https://dm.52papa.me";
+    }, 200);<\/script>
+      </body>
+    </html>
+  `);
+    iframeDoc.close();
+  </script>
+</body>
